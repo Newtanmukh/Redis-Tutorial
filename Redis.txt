@@ -1,0 +1,107 @@
+Open source in memory data structure store which can be use as a database or a cache and message blocker.
+TERMINAL : type  redis-cli
+NoSQL Key/value store
+
+supports multiple data structures (lists sets etc)
+
+Built in replication
+
+
+
+SUPPROTED DATA STRUCTURES: 
+	Strings
+	lists
+	sets
+	sorted sets
+	hashes
+	
+
+	complicated DS:
+	bitmaps
+	hyperlogs
+	geospatial indexes
+
+
+flexible
+no need to create schemas or column names
+very fast : 81,000 GETS and 110,000 SETS per second
+Rich datatype
+caching & Disk persistance
+
+data encryption is NOT supported
+do not allow external access/internet access
+simple authentication can be set up
+can be restricted to certain interfaces
+
+
+
+
+
+##################################################  COMMANDS  #################################################################################
+
+ping : check to see if a connection is still alive.
+echo 'hello world'
+quit : close the connection
+set foo 100: set the value of foo to 100
+get foo : will tell you the value of foo.
+incr foo : will increment the value of foo
+decr foo : decrement the value of foo
+exists foo : return 1 if foo exists, otherwise not.
+del foo : delete
+flushall : clear everything / delete everything
+
+KEY : VALUE PAIR:
+	set server:name someserver
+	set server:port 8000
+	get server:port = will return 8000
+	
+
+EXPIRE : 
+set f randomval
+expire f 5 : will expire in 5 seconds
+ttl f: will give us the amount of seconds remaining
+setex greeting 30 "hello world" : will se the value of greeting to 30, and this value will expire in 30 seconds.
+persist greeting : if a value is going to expire in sometime, then this will hold it back and will prevent the greeting from expiring.
+
+SET MULTIPLE KEY/VALUE PAIRS:
+	mset key1 hello key2 world key3 ok
+
+append p "randomval" : this will appened this randomval to orignal value of p. basically this will do , p=p+"randomval"
+
+rename key1 greet : this will change the name of the key of key1 to greet, and will transfer the value to greet. will delete key1 key.
+
+LIST : 
+
+LPUSH/lpush : will push the elements in order from the begining.
+rpush: from the end. (just like in vectors )
+lpush mylist abg : will create a list named 'mylist' if it does not exist, and will append the abg to it.
+lrange mylist 0 -1 : will give you all the elemnts starting from index 0.
+lrange mylist 1 2 : will give u elemetns of index 1 and 2 (both of them inclusive)
+rpush mylist abg
+
+llen mylist  : will give u the length of the list.
+
+lpop mylist : will delete the element from the starting of the list
+rpop mylist : will delete the element from the end of the list
+linsert mylist before "elem" "xd" : will add the element "xd" just before "elem"
+linsert mylist after "elem" "xd" : will add the element "xd" just after "elem"
+
+
+SEDD:
+
+sadd cars ford : add ford
+sadd cars honda : add honda
+sadd cars bmw
+sadd cars s 
+sismember cars ford : if an element is a member of stored there.
+sm
+
+
+
+
+
+
+
+
+	
+
